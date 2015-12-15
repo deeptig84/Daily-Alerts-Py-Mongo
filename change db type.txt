@@ -1,0 +1,17 @@
+var cursor = db.genius.find()
+while (cursor.hasNext()) {
+var doc = cursor.next();
+db.genius.update({_id : doc._id}, {$set : {dob : new Date(doc.dob)}})
+}
+
+var cursor = db.genius.find()
+while (cursor.hasNext()) {
+var doc = cursor.next();
+db.genius.update({_id : doc._id}, {$set : {dos : new Date(doc.dos)}})
+}
+
+
+db.genius.find().forEach(function(element){
+  element.dob = new Date(element.dob);
+  db.collection.save(element);
+})
