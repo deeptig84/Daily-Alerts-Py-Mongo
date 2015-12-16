@@ -90,7 +90,7 @@ mandrll_apikey = 'uP9avYSTtIVL4pvpo6erEg'
 
 email_message = opening_msg + scan_message	+ counselling_message 	+ closing_msg
 
-to_list = [{'email' : 'deeptig84@gmail.com'},{'email' : 'anuraggupta86@gmail.com'},{'email' : 'sagarmeansocean@gmail.com'}   ]
+to_list = [{'email' : 'anuraggupta86@gmail.com'}  ]
 
 try:
 	mandrill_client = mandrill.Mandrill(mandrll_apikey)
