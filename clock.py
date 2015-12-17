@@ -1,9 +1,12 @@
+import logging
+logging.basicConfig()
+import os
+import pytz
 from apscheduler.schedulers.blocking import BlockingScheduler
+from pytz import timezone
 
-sched = BlockingScheduler()
-
-
-@sched.scheduled_job('cron', day_of_week='mon-sun', hour=01)
+sched = BlockingScheduler({'apscheduler.timezone': timezone('Asia/Calcutta')})
+@sched.scheduled_job('cron', day_of_week='mon-sun', hour=12, minute=45)
 def scheduled_job():
-    PyScriptDailyNotification.py
+    os.system('python PyScriptDailyNotification.py')
 sched.start()
